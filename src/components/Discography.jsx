@@ -12,9 +12,14 @@ function Discography() {
     }, []);
 
     function fetchAlbums() {
-        fetch("api/artist/525046/albums")
+        fetch("api/artist/145/albums")
             .then(res => res.json())
-            .then(result => setAlbums(result.data))
+            .then(result => {
+                const unique = result.data.filter(
+                    (a, i, self) => i === self.findIndex(t => t.title === a.title)
+                );
+                setAlbums(unique);
+            })
             .catch(err => console.error(err))
     }
 
