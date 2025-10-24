@@ -44,7 +44,7 @@ function Discography() {
             <h2>Discography</h2>
             <div className="search">
                 <form>
-                    <input type="text" name="q" className="input" autoComplete="off" onChange={handleFilterChange}  />
+                    <input type="text" name="q" className="input" autoComplete="off" placeholder="Busque pelo nome" onChange={handleFilterChange}  />
                 </form>
             </div>
             <div className="discography">
